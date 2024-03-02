@@ -22,8 +22,6 @@ RUN curl -sL "https://code.visualstudio.com/sha/download?build=stable&os=cli-alp
       tar -xf /tmp/vscode-cli.tar.gz -C /usr/bin && \
       rm /tmp/vscode-cli.tar.gz
 
-
-
 RUN useradd -rm -s /bin/bash -g root -G sudo -u 1001 dev
 RUN echo dev:docker | chpasswd
 
@@ -35,6 +33,7 @@ WORKDIR /home/dev/repo
 # expose port
 EXPOSE 8000
 
-ENTRYPOINT [ "entrypoint" ]
+CMD [ "code","tunnel","--accept-server-license-terms", "--disable-telemetry", "--name","${MACHINE_NAME}" ]
+# ENTRYPOINT [ "entrypoint" ]
 # ENTRYPOINT [ "code","tunnel","--accept-server-license-terms", "--disable-telemetry", "--name","${MACHINE_NAME}" ]
 # ENTRYPOINT [ "code","tunnel","--accept-server-license-terms", "--disable-telemetry" ]

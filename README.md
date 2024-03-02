@@ -26,13 +26,16 @@ docker run --rm -e MACHINE_NAME=b660-vscode --name b660-vscode vscode-remote-tun
 # create a docker volume
 docker volume create dev
 # mount the docker volume
-docker run --rm -d -e MACHINE_NAME=b660-vscode -v dev:/home/dev/repo vscode-remote-tunnel code tunnel 
+docker run --rm -e MACHINE_NAME=b660-vscode -v dev:/home/dev/repo vscode-remote-tunnel code tunnel 
 ```
 
 ## Link account
 ```bash
 # note the container id running vscode-remote-tunnel image
 docker container ls
+#or
+docker ps
+
 # print out container log and follow instruction to authenticate
 docker logs CONTAINER_ID
 ```
