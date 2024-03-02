@@ -25,7 +25,7 @@ docker run --rm -d -v /path/to/dev/folder/on/server:/home/dev/Repo vscode-server
 # create a docker volume
 docker volume create dev
 # mount the docker volume
-docker run --rm -d -v dev:/home/dev/Repo vscode-server code tunnel
+docker run --rm -d -v dev:/home/dev/repo vscode-server code tunnel
 ```
 
 ## Link account
