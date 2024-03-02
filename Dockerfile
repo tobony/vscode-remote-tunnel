@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ENV MACHINE_NAME vscode-remote
+ENV MACHINE_NAME vscode-remote-tunnel
 
 # hadolint ignore=DL3008
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y --no-install-recommends \
