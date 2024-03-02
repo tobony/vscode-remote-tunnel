@@ -8,7 +8,7 @@ This repo contains a `Dockerfile` from which you can build a container running V
 
 ## Build image
 ```bash
-docker build -t vscode-sever .
+docker build -t vscode-remote-tunnel .
 ```
 
 ## Run
@@ -17,7 +17,7 @@ You can choose one of the two options below.
 ### Option 1
 ```bash
 # directly mount the host's filesystem
-docker run --rm -d -v /path/to/dev/folder/on/server:/home/dev/Repo vscode-server code tunnel -e MACHINE_NAME=b660-vscode
+docker run --rm -d -v /path/to/dev/folder/on/server:/home/dev/repo vscode-remote-tunnel code tunnel -e MACHINE_NAME=b660-vscode
 ```
 
 ### Option 2
