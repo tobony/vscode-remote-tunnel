@@ -17,7 +17,8 @@ You can choose one of the two options below.
 ### Option 1
 ```bash
 # directly mount the host's filesystem
-docker run --rm -d -v /path/to/dev/folder/on/server:/home/dev/repo vscode-remote-tunnel code tunnel -e MACHINE_NAME=b660-vscode
+docker run --rm -e MACHINE_NAME=b660-vscode -v /path/to/dev/folder/on/server:/home/dev/repo vscode-remote-tunnel code tunnel 
+docker run --rm -e MACHINE_NAME=b660-vscode --name b660-vscode vscode-remote-tunnel code tunnel --accept-server-license-terms --disable-telemetry 
 ```
 
 ### Option 2
@@ -25,7 +26,7 @@ docker run --rm -d -v /path/to/dev/folder/on/server:/home/dev/repo vscode-remote
 # create a docker volume
 docker volume create dev
 # mount the docker volume
-docker run --rm -d -v dev:/home/dev/repo vscode-remote-tunnel code tunnel -e MACHINE_NAME=b660-vscode
+docker run --rm -d -e MACHINE_NAME=b660-vscode -v dev:/home/dev/repo vscode-remote-tunnel code tunnel 
 ```
 
 ## Link account
